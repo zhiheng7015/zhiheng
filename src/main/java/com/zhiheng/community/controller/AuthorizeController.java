@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AuthorizeController {
     @Autowired
     private GithubProvider githubProvider;
-    @Value("${client_id}")
+    @Value("${github.client_id}")
     private String clientId;
-    @Value("${client_secret}")
+    @Value("${github.client_secret}")
     private String clientSecret;
-    @Value("${redirect_uri}")
+    @Value("${github.redirect_uri}")
     private String redirecUri;
     @GetMapping("/callback")
         public String callback(@RequestParam(name= "code") String code,
