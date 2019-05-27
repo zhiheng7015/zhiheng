@@ -3,7 +3,16 @@ package com.zhiheng.community.dto;
 public class GithubUser {
     private  String name;
     private  long id;
-    private String bio;
+    private  String bio;
+
+    @Override
+    public String toString() {
+        return "GithubUser{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", bio='" + bio + '\'' +
+                '}';
+    }
 
     public String getName() {
         return name;
