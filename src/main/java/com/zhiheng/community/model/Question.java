@@ -1,5 +1,8 @@
 package com.zhiheng.community.model;
 
+import lombok.Data;
+
+@Data
 public class Question {
     private int id;
     private String title;
@@ -8,18 +11,6 @@ public class Question {
     private long gmt_create;
     private long gmt_modified;
     private Integer creator;
-
-    public Integer getCreator() {
-        return creator;
-    }
-
-    public void setCreator(Integer creator) {
-        this.creator = creator;
-    }
-
-    private Integer comment_count;
-    private Integer view_count;
-    private Integer like_count;
 
     public int getId() {
         return id;
@@ -69,27 +60,11 @@ public class Question {
         this.gmt_modified = gmt_modified;
     }
 
-    public Integer getComment_count() {
-        return comment_count;
+    public Integer getCreator() {
+        return creator;
     }
 
-    public void setComment_count(Integer comment_count) {
-        this.comment_count = comment_count;
-    }
-
-    public Integer getView_count() {
-        return view_count;
-    }
-
-    public void setView_count(Integer view_count) {
-        this.view_count = view_count;
-    }
-
-    public Integer getLike_count() {
-        return like_count;
-    }
-
-    public void setLike_count(Integer like_count) {
-        this.like_count = like_count;
+    public void setCreator(Integer creator) {
+        this.creator = creator;
     }
 }
