@@ -12,4 +12,5 @@ public interface UserMapper {
     void insert(User user);
     @Select("select * from user where token=#{token}")
     User findByToken(@Param("token") String token);
+
 }
