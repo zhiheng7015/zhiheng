@@ -1,9 +1,10 @@
-package com.zhiheng.community.model;
+package com.zhiheng.community.dto;
 
+import com.zhiheng.community.model.User;
 import lombok.Data;
 
 @Data
-public class Question {
+public class QuestionDTO {
     private int id;
     private String title;
     private String description;
@@ -14,4 +15,5 @@ public class Question {
     private Integer commentCount;
     private Integer viewCount;
     private Integer likeCount;
+    private User user;
 }

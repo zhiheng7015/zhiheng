@@ -1,23 +1,29 @@
 package com.zhiheng.community.controller;
 
+import com.zhiheng.community.dto.QuestionDTO;
+import com.zhiheng.community.mapper.QuestionMapper;
 import com.zhiheng.community.mapper.UserMapper;
+import com.zhiheng.community.model.Question;
 import com.zhiheng.community.model.User;
+import com.zhiheng.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class IndexController {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private QuestionService questionService;
     @GetMapping("/")
-    public String index(HttpServletRequest request){
+    public String index(HttpServletRequest request,
+                        Model model){
         Cookie[] cookies = request.getCookies();
         if (cookies!=null && cookies.length!=0)
         for (Cookie cookie : cookies) {
@@ -30,7 +36,9 @@ public class IndexController {
                 break;
             }
         }
-    return "index";
+        List<QuestionDTO> questionList=questionService.list();
+        model.addAttribute("questions",questionList);
+        return "index";
     }
 
 }

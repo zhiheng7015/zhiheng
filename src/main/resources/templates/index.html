@@ -49,17 +49,25 @@
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <h2><span class="glyphicon glyphicon-list" aria-hidden="true"></span>发现</h2>
             <hr>
-            <div class="media">
+            <div class="media" th:each="question : ${questions}">
                 <div class="media-left">
                     <a href="#">
-                        <img class="media-object img-thumbnail element.style "  src="https://avatars3.githubusercontent.com/u/50814677?v=4">
+                        <img class="media-object img-thumbnail element.style "
+                             th:src="${question.user.avatarUrl}">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">关于996......</h4>
-                    <span class="text-dese">发起了问题 • 1 人关注 • 0 个回复 • 19 次浏览 • 1 小时前</span>
+                    <h4 class="media-heading" th:text="${question.title}"></h4>
+                    <span th:text="${question.description}"></span><br>
+                    <span class="text-dese">
+                        <span th:text="${question.commentCount}"></span>0 个回复 •
+                        <span th:text="${question.viewCount}"></span>19 次浏览 •
+                        <span th:text="${question.getGmt_create()}"></span>
+                        <span th:text="${#dates.format(question.getGmt_create(), 'yyyy-MM-dd hh:mm:ss')}"></span>
+                    </span>
                 </div>
-            </div>        </div>
+            </div>
+        </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <h3>问题发起指南</h3>
         </div>
