@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 /**
- *
+ *获取登录信息
  */
 @Controller
 public class AuthorizeController {
@@ -36,6 +36,7 @@ public class AuthorizeController {
                                @RequestParam(name ="state") String state,
                                HttpServletRequest request,
                                HttpServletResponse response){
+        //获取登录账号github的信息
         AccessTokenDTO accessTokenDTO=new AccessTokenDTO();
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setCode(code);

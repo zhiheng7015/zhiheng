@@ -3,7 +3,7 @@ package com.zhiheng.community.dto;
 import lombok.Data;
 
 /**
- *
+ *git信息
  */
 @Data
 public class AccessTokenDTO {

@@ -2,6 +2,9 @@ package com.zhiheng.community.model;
 
 import lombok.Data;
 
+/**
+ * user实体类
+ */
 @Data
 public class User {
     private int id;
