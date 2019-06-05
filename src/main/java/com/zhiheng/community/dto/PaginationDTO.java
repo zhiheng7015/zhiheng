@@ -19,20 +19,8 @@ public class PaginationDTO {
     private List<Integer> pages=new ArrayList<>();
     private Integer totalPage;//页数
 
-    public void setPagnation(Integer totalCount, Integer page, Integer size) {
-        System.out.println(page+size);
-        if (totalCount % size==0){
-            totalPage=totalCount/size;
-        }else {
-            totalPage=totalCount/size+1;
-        }
-        //判断如果page为负数就等一大一总页数就等于最有一页
-        if (page<1){
-            page=1;
-        }
-        if (page>totalPage){
-            page=totalPage;
-        }
+    public void setPagnation(Integer totalPage, Integer page) {
+        this.totalPage=totalPage;
         //当前页负值
         this.page=page;
         //显示的页数
