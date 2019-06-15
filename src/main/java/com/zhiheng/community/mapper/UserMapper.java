@@ -1,10 +1,7 @@
 package com.zhiheng.community.mapper;
 
 import com.zhiheng.community.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
@@ -16,4 +13,10 @@ public interface UserMapper {
     //获取当前账号信息
     @Select("select * from user where id=#{id}")
     User findById(@Param("id") Integer id);
+    //判断user是否存在
+    @Select("select * from user where account_id=#{accountId}")
+    User findByAccountID(String accountId);
+    //user的话在添加进行修改
+    @Update("update user set name=#{name},token=#{toKen},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl} where id=#{id}")
+    void updateUser(User user);
 }
