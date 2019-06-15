@@ -1,5 +1,8 @@
 body{
     background-color: #efefef;
+    background-image:url(/img/5.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 .main{
     background-color: white;
@@ -20,4 +23,8 @@ body{
 }
 .profile .section{
     margin-top: 15px;
+}
+.community-menu{
+    color: #999;
+    font-size: 13px;
 }

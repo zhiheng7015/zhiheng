@@ -102,4 +102,14 @@ public class QuestionService {
         System.out.println(paginationDTO);
         return paginationDTO;
     }
+
+    public QuestionDTO getById(Integer id) {
+        System.out.println("进来了2.........");
+        Question question=questionMapper.getById(id);
+        QuestionDTO questionDTO=new QuestionDTO();
+        BeanUtils.copyProperties(question,questionDTO);
+        User user= userMapper.findById(question.getCreator());
+        questionDTO.setUser(user);
+        return questionDTO;
+    }
 }
