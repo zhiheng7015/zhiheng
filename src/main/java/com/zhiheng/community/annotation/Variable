@@ -1,0 +1,29 @@
+id
+title  名称
+description  发布内容
+gmt_create  发布时间
+gmt_modified 修改时间
+creator  创建人id
+comment_count 阅读数
+view_count 阅读数
+like_count 点赞数
+tag  标签
+
+分页paginationDTO：
+
+showPrevious 向前按钮
+showFirstPage 第一页按钮
+showNext 第二按钮
+showEndpage 最后按钮
+page当前页面
+pages 显示页数的数组
+
+
+分页变量：
+page  页码
+size 没叶的条数
+
+下标从0开始计算
+计算页数：总条数/每页条数
+当总条数不能整除条数时
+总条数/每页条数+1

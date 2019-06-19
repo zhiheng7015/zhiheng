@@ -112,4 +112,18 @@ public class QuestionService {
         questionDTO.setUser(user);
         return questionDTO;
     }
+    //根据id判断信息是否存在如多有进行更新 如果没有添加信息
+    public void createORupdate(Question question) {
+        Integer id=question.getId();
+        if (id==null){
+                //创建
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setGmtModified(question.getGmtCreate());
+            questionMapper.create(question);
+        }else {
+            //更新
+            question.setGmtModified(question.getGmtCreate());
+            questionMapper.update(question);
+        }
+    }
 }
