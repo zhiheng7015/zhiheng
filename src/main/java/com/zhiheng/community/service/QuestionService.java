@@ -116,7 +116,9 @@ public class QuestionService {
     public void createORupdate(Question question) {
         Integer id=question.getId();
         if (id==null){
-                //创建
+            //创建
+            System.out.println(id);
+            System.out.println("id=null创建");
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
             questionMapper.create(question);
@@ -125,5 +127,12 @@ public class QuestionService {
             question.setGmtModified(question.getGmtCreate());
             questionMapper.update(question);
         }
+    }
+
+    public void create(Question question) {
+        //创建
+        question.setGmtCreate(System.currentTimeMillis());
+        question.setGmtModified(question.getGmtCreate());
+        questionMapper.create(question);
     }
 }
