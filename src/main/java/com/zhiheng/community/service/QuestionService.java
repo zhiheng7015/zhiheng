@@ -31,7 +31,6 @@ public class QuestionService {
         Integer totalPage;
         //总数
         Integer totalCount = questionMapper.count();
-
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
         } else {
