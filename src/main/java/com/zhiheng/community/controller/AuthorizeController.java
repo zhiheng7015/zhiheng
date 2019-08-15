@@ -50,7 +50,7 @@ public class AuthorizeController {
             User user=new User();
             String toKen = UUID.randomUUID().toString();
             System.out.println(toKen+"token值");
-            user.setToKen(toKen);
+            user.setToken(toKen);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setAvatarUrl(githubUser.getAvatar_url());
